@@ -5,6 +5,7 @@
   "dependencies": {
     "@types/reactstrap": "^6.4.3",
     "bootstrap": "^4.1.3",
+    "email-validator": "^2.0.4",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts-ts": "^4.0.8",
