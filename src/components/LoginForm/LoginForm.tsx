@@ -1,6 +1,7 @@
 import * as React from "react";
 import {Button, Form, FormFeedback, FormGroup, Input, Label} from "reactstrap";
 import * as EmailValidator from "email-validator";
+import {Link} from "react-router-dom";
 
 export interface LoginFormProps {
     login?: string;
@@ -47,6 +48,8 @@ class LoginForm extends React.Component<LoginFormProps, LoginState> {
                 {passwordErrorMessage}
             </FormGroup>
             <Button color="primary" onClick={this.login}>Login</Button>
+            <br/>
+            Если у вас нет аккаунта, <Link to={"/register"}>зарегистрируйтесь</Link>
         </Form>;
     }
 

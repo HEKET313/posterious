@@ -1,6 +1,7 @@
 import * as React from "react";
 import {Button, Form, FormFeedback, FormGroup, Input, Label} from "reactstrap";
 import * as EmailValidator from "email-validator";
+import {Link} from "react-router-dom";
 
 interface State {
     login: string;
@@ -12,6 +13,17 @@ interface State {
 }
 
 class RegistrationForm extends React.Component<object, State> {
+    constructor(props: object) {
+        super(props);
+        this.state = {
+            login: "",
+            pass: "",
+            rePass: "",
+            loginError: "",
+            passwordError: "",
+            globalError: "",
+        }
+    }
 
     render(): React.ReactNode {
         const {loginError, passwordError, globalError} = this.state;
@@ -40,6 +52,8 @@ class RegistrationForm extends React.Component<object, State> {
                 {passwordErrorMessage}
             </FormGroup>
             <Button color="primary" onClick={this.register}>Зарегистрироваться</Button>
+            <br/>
+            Если у вас уже есть аккаунт, <Link to={"/login"}>войдите</Link>
         </Form>;
     }
 
